@@ -10,3 +10,8 @@
 [submodule "external_dependencies/robocasa"]
 	path = external_dependencies/robocasa
 	url = https://github.com/squarefk/robocasa
+[submodule "external/Isaac-GR00T"]
+	path = external/Isaac-GR00T
+	url = https://github.com/karimtito/Isaac-GR00T.git
+[submodule "Isaac-GR00T"]
+	url = https://github.com/karimtito/Isaac-GR00T.git
