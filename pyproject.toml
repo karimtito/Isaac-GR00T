@@ -53,6 +53,52 @@ dependencies = [
     "tensorrt-cu13>=10.15.1.29; platform_machine == 'aarch64'",
     "tensorrt-cu12-libs>=10.15.1.29; platform_machine == 'x86_64'",
     "tensorrt-cu13-libs>=10.15.1.29; platform_machine == 'aarch64'",
+  "torch",
+  "transformers",
+  "accelerate",
+  "pandas",
+  "pyarrow",
+  "pillow",
+  "pyyaml",
+  "rtamt>=0.3.5",
+  "tyro",
+  "pytest",
+  "scipy>=1.15.3",
+  "tree>=0.2.4",
+  "albumentations==1.4.18",
+  "huggingface-hub[cli]",
+  "opencv-python-headless>=4.5,<4.13",
+  "diffusers==0.35.1",
+  "dm-tree",
+  "lmdb==1.7.5",
+  "msgpack==1.1.0",
+  "msgpack-numpy==0.4.8",
+  "peft==0.17.1",
+  "termcolor==3.2.0",
+  "torchvision==0.22.1",
+  "click==8.1.8",
+  "datasets==3.6.0",
+  "cryptography>=46.0.7",
+  "einops==0.8.1",
+  "gitpython==3.1.50",
+  "jsonlines==4.0.0",
+  "gymnasium==1.2.2",
+  "matplotlib==3.10.1",
+  "numpy==1.26.4",
+  "omegaconf",
+  "torchcodec==0.4.0 ; platform_machine == 'x86_64'",
+  "torchcodec==0.10.0a0 ; platform_machine == 'aarch64' and sys_platform == 'linux'",
+  "wandb==0.23.0",
+  "pyzmq==27.0.1",
+  "deepspeed==0.17.6 ; platform_machine == 'x86_64' and sys_platform == 'linux'",
+  "triton==3.3.1 ; platform_machine == 'aarch64' and sys_platform == 'linux'",
+  "flash-attn==2.7.4.post1 ; (platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')",
+  "onnx>=1.20.0",
+  "onnxscript",
+  "tensorrt-cu12>=10.15.1.29 ; platform_machine == 'x86_64'",
+  "tensorrt-cu13>=10.15.1.29 ; platform_machine == 'aarch64'",
+  "tensorrt-cu12-libs>=10.15.1.29 ; platform_machine == 'x86_64'",
+  "tensorrt-cu13-libs>=10.15.1.29 ; platform_machine == 'aarch64'",
 ]
 
 [project.optional-dependencies]
@@ -108,6 +154,16 @@ tensorrt-cu13-libs = [
 
 [tool.uv.extra-build-dependencies]
 flash-attn = ["torch==2.7.1", "numpy==1.26.4", "triton==3.3.1"]
+
+[tool.uv]
+environments = [
+  "sys_platform == 'linux' and platform_machine == 'x86_64'",
+]
+
+[tool.uv.sources]
+flash-attn = [
+  { url = "https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu12torch2.7cxx11abiFALSE-cp310-cp310-linux_x86_64.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64' and python_version == '3.10'" },
+]
 
 [tool.pytest.ini_options]
 pythonpath = [".", "tests"]
