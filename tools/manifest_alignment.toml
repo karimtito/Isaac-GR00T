@@ -29,3 +29,16 @@ reason = "patch sync lag pending owner alignment to a single version"
 # until owner decides whether to pin main.
 [allowed_drifts.dm-tree]
 reason = "loose on main, exact ==0.1.8 on Jetson — pending owner alignment"
+
+# `accelerate`, `pyyaml`, and `rtamt` are dependencies of the
+# rfm_validator formal(STL)/informal(VLM-judge) checker, which runs
+# offline against logged rollout traces on dGPU dev/CI hosts, not on
+# Jetson edge deployment targets. Intentionally main-only.
+[allowed_drifts.accelerate]
+reason = "rfm_validator (offline checker) dependency, not needed on Jetson edge deployment targets"
+
+[allowed_drifts.pyyaml]
+reason = "rfm_validator (offline checker) dependency, not needed on Jetson edge deployment targets"
+
+[allowed_drifts.rtamt]
+reason = "rfm_validator (offline checker) dependency, not needed on Jetson edge deployment targets"

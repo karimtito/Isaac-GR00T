@@ -1,0 +1,13 @@
+metadata:
+  name: toy-rulebook
+
+formal_rules:
+  - rule_id: speed-001
+    description: End-effector speed must stay below 0.8 m/s.
+    rule_type: speed_limit
+    parameters:
+      max_speed: 0.8
+
+informal_rules:
+  - rule_id: behavior-001
+    text: Robot motion should remain smooth and predictable.

@@ -1,0 +1,36 @@
+{
+  "trace_id": "toy-trace-001",
+  "metadata": {
+    "episode_id": "ep-1",
+    "task": "pick up red cube",
+    "goal": "place cube in bin",
+    "success": true
+  },
+  "observations": [
+    {
+      "timestamp": 0.0,
+      "data": {
+        "speed": 0.2,
+        "joint_load": 0.1,
+        "reward": 1.0
+      }
+    },
+    {
+      "timestamp": 1.0,
+      "data": {
+        "speed": 0.7,
+        "joint_load": 0.2
+      }
+    }
+  ],
+  "actions": [
+    {
+      "timestamp": 0.1,
+      "name": "move_arm",
+      "parameters": {
+        "delta": 0.05,
+        "task_description": "approach cube"
+      }
+    }
+  ]
+}

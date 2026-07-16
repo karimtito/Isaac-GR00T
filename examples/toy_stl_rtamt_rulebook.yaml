@@ -1,0 +1,19 @@
+metadata:
+  name: toy-stl-rtamt-rulebook
+
+formal_rules:
+  - rule_id: stl-rtamt-speed-001
+    description: Always keep end-effector speed below 0.8 m/s (RTAMT robustness).
+    rule_type: stl
+    parameters:
+      engine: rtamt
+      rtamt_variable: speed
+      rtamt_spec: always(speed <= 0.8)
+      temporal_operator: always
+      safety_function:
+        source: observation
+        key: speed
+        comparator: <=
+        threshold: 0.8
+
+informal_rules: []
