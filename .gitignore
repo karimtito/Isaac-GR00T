@@ -8,6 +8,8 @@
 /examples/LIBERO/libero_object_no_noops_1.0.0_lerobot/
 /examples/LIBERO/libero_spatial_no_noops_1.0.0_lerobot/
 
+# ignore checkpoints and logs
+checkpoints/
 # UV lock file
 uv.lock
 
